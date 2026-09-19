@@ -75,3 +75,18 @@ def main():
         "rows_before": len(filtered_df),
         "rows_after": len(grouped_df)
     })
+
+# Step 4: NumPy vs Loop Performance Benchmark
+    print("[4/6] Executing NumPy Benchmark...")
+    benchmark_res = run_numpy_benchmark(
+        series=raw_df[measure_col],
+        sample_size=100_000,
+        threshold=100_000.0
+    )
+    audit_records.append({
+        "step": 4,
+        "operation": "NumPy Benchmark",
+        "rule": "Sample 100k non-null rows and benchmark Python loop vs vectorized NumPy",
+        "rows_before": 100_000,
+        "rows_after": 100_000
+    })
