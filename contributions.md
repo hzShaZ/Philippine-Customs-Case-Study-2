@@ -15,8 +15,6 @@
 - `src/summary.py`: fixed an indentation bug and a `pd.Dataframe` typo that would have crashed on import
 - `analysis.ipynb` / `analysis.html`: notebook demonstrating the imported pipeline code, with HTML export
 
-**Deliverables:** Working end-to-end pipeline (`python main.py` runs load → filter → benchmark → summarize → plot → validate → audit log, all 8 output files generated and confirmed). Confirmed dataset loads correctly (2,236,612 rows, 30 columns, matches brief's reference totals), zero missing values in required columns. `analysis.ipynb` and `analysis.html`.
-
 ### Commits
 - `29cfec5` - Add config.py with paths, reference totals, and filter placeholders
 - `8dd56fa` - Add CustomsDataLoader class with load, validate_columns, summary_info
@@ -34,18 +32,21 @@
 
 ---
 
-## [Teammate 2 Name] — [Assigned Part]
+## [Irabagon Marc Ira] — [Summariazation]
 
-**Assigned Features:** [fill in]
+**Assigned Features:** [Data Summarizer]
 
 **Core Functions & Modules:**
-- [fill in]
+- [summary.py]
 
-**Deliverables:** [fill in]
 
 ### Commits
-- [fill in as they commit]
-
+- '640ce4ff'- feat: imported modules to start the file
+- 'ac88f8f' - feat: created new class for datasummarizing
+- 'bc5405c'- feat: add generate_single_grouped and data summarizer
+- '26684843'- feat: added top 10 rankinks
+- '296f8cb'- feat: added categories and pivot table
+- '9e62a08'- fix: formatting issues
 ---
 
 ## [Teammate 3 Name] — [Assigned Part]
@@ -76,14 +77,14 @@
 
 ---
 
-## [Teammate 5 Name] — [Assigned Part]
+## [Gabriel Agmata] — [Data Filtering]
 
-**Assigned Features:** [fill in]
+**Assigned Features:** [data filtering]
 
 **Core Functions & Modules:**
-- [fill in]
-
-**Deliverables:** [fill in]
+- [data_filtering.py]
 
 ### Commits
-- [fill in as they commit]
+- 3a324c5 - feat(filter): define filter_and_transform_data with type hints and docstring
+- 2cd05b6 - feat(filtering): implement 2-condition filter and zero-row error handling
+- 09be285 - feat(filtering): create numerical and categorical derived columns
