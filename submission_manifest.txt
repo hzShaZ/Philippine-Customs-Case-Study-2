@@ -1,3 +1,3 @@
 Repository URL: https://github.com/hzShaZ/Philippine-Customs-Case-Study-2
 Release Tag: week6-v1.0
-Commit Hash: 2e4bcdf6d1fb97ab5aabd5e7139a5167a932dc24
+Commit Hash: a6eba067fa612c0c922ea8089ce1976ebc60e492
