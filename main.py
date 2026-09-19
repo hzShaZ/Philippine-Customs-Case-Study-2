@@ -32,4 +32,22 @@ def main():
         "rows_before": len(raw_df),
         "rows_after": len(raw_df)
     })
+    
+# Step 2: Filtering & Derived Metrics
+    print("[2/6] Applying Filters and Computing Derived Metrics...")
+    filtered_df, excluded_df = apply_filters_and_derived(
+        raw_df, 
+        measure_col=measure_col
+    )
+    
+    # Export filtered CSVs
+    filtered_df.to_csv(output_dir / "filtered_data.csv", index=False)
+    excluded_df.to_csv(output_dir / "excluded_data.csv", index=False)
 
+    audit_records.append({
+        "step": 2,
+        "operation": "Filtering & Derived Metrics",
+        "rule": "Exclude non-positive measures and out-of-scope rows",
+        "rows_before": len(raw_df),
+        "rows_after": len(filtered_df)
+    })
