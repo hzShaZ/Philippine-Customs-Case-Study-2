@@ -8,3 +8,10 @@ class datasummarizer:
     self.cat2 = cat2
     self.measure = measure
 
+ def generate_single_grouped(self, output_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
+        grouped = self.df.groupby(self.cat1, dropna=False)[self.measure].agg(
+            row_count='size', valid_measure_count='count', sum='sum', mean='mean'
+        ).reset_index()
+        grouped.to_csv(output_dir / "grouped.csv", index=False)
+
+
