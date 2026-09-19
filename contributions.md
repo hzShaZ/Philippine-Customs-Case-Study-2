@@ -49,31 +49,49 @@
 - '9e62a08'- fix: formatting issues
 ---
 
-## [Teammate 3 Name] — [Assigned Part]
+## Arwin A. Abad — Visualization.py, Validation.py 
 
-**Assigned Features:** [fill in]
+**Assigned Features:** [Main Pipeline Integration (`main.py`), Data Visualizations, Automated Reconciliation Checks, and Audit Trail Logging]
 
 **Core Functions & Modules:**
-- [fill in]
+- `main.py`: `main()`
+- `src/visualizations.py`: `generate_bar_chart()`, `generate_heatmap()`
+- `src/validation.py`: `build_and_check_validation()`, `export_audit_log()`
 
-**Deliverables:** [fill in]
+**Deliverables:** `main.py`, `output/bar.png`, `output/heatmap.png`, `output/validation.csv`, `output/audit_log.csv`
 
 ### Commits
-- [fill in as they commit]
+- `39c9f6f` - `feat (main): integrate validation checks, step 6 audit record, and audit_log exporter`
+- `6f870c0` - `feat (main): integrate chart generation and step 5 audit record`
+- `7b22df4` - `feat (main): integrate numpy benchmark execution and step 4 audit record`
+- `ce81772` - `feat (main): add grouped, top10, and pivot summary outputs with step 3 audit record`
+- `14aa9b0` - `feat (main): add filtering, csv exports, and step 2 audit record`
+- `4c431b8` - `!git commit -m "feat (main): add data loading and step 1 audit record"`
+- `e7915fc` - `feat: updating main.py`
+- `bca47f0` - `Merge branch 'feature/validation-and-audit' of https://github.com/hzShaZ/group5-case2 into feature/validation-and-audit`
+- `c793af8` - `feat (validation): add non-zero exit handling and export_audit_log exporter function`
+- `7b65201` - `feat (validation): implement reconciliation checks and validation.csv export`
+- `21cd1bb` - `feat (validation): add function signature, type hints, and metric definitions`
+- `a07999e` - `feat: add generate_heatmap function for origin country and TQ categories`
+- `56df25b` - `feat: add generate_bar_chart function for top 10 dutiable values`
+- `50399cf` - `chore: add visualization dependencies and imports`
+- `b5365f8` - `Merge pull request #1 from hzShaZ/feature/config-and-loader`
 
 ---
 
-## [Teammate 4 Name] — [Assigned Part]
+## Abdulazziz F. Macalalad — benchmark.py
 
-**Assigned Features:** [fill in]
+**Assigned Features:** Performance Benchmarking (Python Loop vs Vectorized NumPy)
 
 **Core Functions & Modules:**
-- [fill in]
+- `src/benchmark.py`: `run_numpy_benchmark()`
 
-**Deliverables:** [fill in]
+**Deliverables:** Performance execution metrics and speedup factor verification
 
 ### Commits
-- [fill in as they commit]
+- `dc2e4b5` - `feat (benchmark): add tolerance verification check and median performance metrics`
+- `79657be` - `feat (benchmark): implement 5-run timing loop for python loop vs vectorized numpy`
+- `76274a3` - `feat (benchmark): add function signature, docstring, and fixed-seed sampling`
 
 ---
 
