@@ -90,3 +90,22 @@ def main():
         "rows_before": 100_000,
         "rows_after": 100_000
     })
+
+# Step 5: Data Visualizations
+    print("[5/6] Generating Charts and Heatmaps...")
+    generate_bar_chart(
+        top10_df, 
+        cat_col=country_col, 
+        output_path=output_dir / "bar.png"
+    )
+    generate_heatmap(
+        pivot_df, 
+        output_path=output_dir / "heatmap.png"
+    )
+    audit_records.append({
+        "step": 5,
+        "operation": "Data Visualizations",
+        "rule": "Generate bar.png and heatmap.png",
+        "rows_before": len(top10_df),
+        "rows_after": len(top10_df)
+    })
