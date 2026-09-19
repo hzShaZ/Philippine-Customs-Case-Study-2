@@ -34,7 +34,7 @@ class CustomsDataLoader:
                 f"Data file not found at {self.file_path}. "
                 f"Download it and place it there before running."
             )
-        self.data = pd.read_csv(self.file_path)
+        self.data = pd.read_csv(self.file_path, encoding="latin1", low_memory=False)
         self.raw_row_count = len(self.data)
         return self.data
 
