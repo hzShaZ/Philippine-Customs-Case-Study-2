@@ -21,3 +21,23 @@ def run_numpy_benchmark(
     clean_array = series.dropna().to_numpy()
     actual_sample_size = min(sample_size, len(clean_array))
     sample = np.random.choice(clean_array, size=actual_sample_size, replace=False)
+    
+    
+    # 1. Standard Python for loop (5 runs)
+    loop_times = []
+    loop_sum = 0.0
+    for _ in range(5):
+        t0 = time.perf_counter()
+        loop_sum = sum(val for val in sample if val > threshold)
+        t1 = time.perf_counter()
+        loop_times.append(t1 - t0)
+
+    # 2. Vectorized NumPy boolean mask aggregation (5 runs)
+    vector_times = []
+    vector_sum = 0.0
+    for _ in range(5):
+        t0 = time.perf_counter()
+        mask = sample > threshold
+        vector_sum = float(np.sum(sample[mask]))
+        t1 = time.perf_counter()
+        vector_times.append(t1 - t0)
