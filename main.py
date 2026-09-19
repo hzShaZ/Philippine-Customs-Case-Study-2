@@ -109,3 +109,27 @@ def main():
         "rows_before": len(top10_df),
         "rows_after": len(top10_df)
     })
+
+# Step 6: Reconciliation Checks & Audit Log Export
+print("[6/6] Validating Pipeline Integrity...")
+    val_df = build_and_check_validation(
+        raw_df=raw_df,
+        filtered_df=filtered_df,
+        excluded_df=excluded_df,
+        grouped_df=grouped_df,
+        top10_df=top10_df,
+        pivot_df=pivot_df,
+        benchmark_res=benchmark_res,
+        measure_col=measure_col,
+        output_dir=output_dir
+    )
+
+    audit_records.append({
+        "step": 6,
+        "operation": "Reconciliation Checks",
+        "rule": "Verify dataset against Customs 2015 reference totals",
+        "rows_before": len(raw_df),
+        "rows_after": len(raw_df)
+    })
+
+    export_audit_log(audit_records, output_dir=output_dir)
