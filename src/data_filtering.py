@@ -22,3 +22,10 @@ def filter_and_transform_data(
 
     if filtered_df.empty:
         raise ValueError("Filter criteria returned zero rows.")
+        
+    # 1 Numerical Derived Column
+    filtered_df["dutiablevalue_kphp"] = filtered_df[measure_col] / 1_000.0
+    # 1 Categorical/Flag Derived Column
+    filtered_df["is_high_value"] = filtered_df[measure_col] >= 1_000_000.0
+
+    return filtered_df, excluded_df
