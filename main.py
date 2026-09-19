@@ -51,3 +51,27 @@ def main():
         "rows_before": len(raw_df),
         "rows_after": len(filtered_df)
     })
+
+# Step 3: Summarization
+    print("[3/6] Generating Aggregation Summaries...")
+    summarizer = DataSummarizer(filtered_df, measure_col=measure_col)
+    
+    # Single-category grouping
+    grouped_df = summarizer.group_by_category(country_col)
+    grouped_df.to_csv(output_dir / "summary_grouped.csv", index=False)
+
+    # Top 10 categories
+    top10_df = summarizer.get_top_n(country_col, top_n=10)
+    top10_df.to_csv(output_dir / "summary_top10.csv", index=False)
+
+    # Two-way Pivot Table with Margins
+    pivot_df = summarizer.create_pivot_table(index_col=country_col, columns_col=tq_col)
+    pivot_df.to_csv(output_dir / "summary_pivot.csv")
+
+    audit_records.append({
+        "step": 3,
+        "operation": "Aggregation Summaries",
+        "rule": "Compute grouped sum/mean/count, top 10 ranking, and 2-way pivot",
+        "rows_before": len(filtered_df),
+        "rows_after": len(grouped_df)
+    })
