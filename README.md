@@ -5,26 +5,26 @@ A Python pipeline that loads, filters, summarizes, and visualizes the 2015 Phili
 ## Project Structure
 ```
 group5-case2/
-├── config.py              # paths, reference totals, required columns, filter config
-├── main.py                # runs the full pipeline
+├── config.py              
+├── main.py                
 ├── README.md
 ├── contributions.md
 ├── submission_manifest.txt
 ├── requirements.txt
-├── analysis.ipynb          # notebook demonstrating the imported pipeline code
-├── analysis.html           # HTML export of the above
+├── analysis.ipynb          
+├── analysis.html           
 ├── data/
-│   └── 2015.csv             # raw dataset, not committed
-├── output/                  # generated summary csvs, plots, validation and audit logs
+│   └── 2015.csv             
+├── output/                  
 ├── src/
 │   ├── __init__.py
-│   ├── data_loader.py        # CustomsDataLoader, loads and validates the csv
-│   ├── audit.py               # audit record builder, missing value checks
-│   ├── data_filtering.py      # two-condition filter, derived columns
-│   ├── benchmark.py            # numpy vs loop comparison
-│   ├── summary.py               # DataSummarizer, grouped/pivot/top10 tables
-│   ├── validation.py             # reconciliation checks, audit log export
-│   └── visualizations.py          # bar chart and heatmap
+│   ├── data_loader.py        
+│   ├── audit.py               
+│   ├── data_filtering.py      
+│   ├── benchmark.py            
+│   ├── summary.py               
+│   ├── validation.py             
+│   └── visualizations.py        
 ```
 
 ## Features
@@ -42,14 +42,6 @@ Python 3.10+, then:
 ```bash
 pip install -r requirements.txt
 ```
-
-## Dataset
-- File: 2015.csv (Philippine Customs import records)
-- Source: [PASTE ACTUAL URL HERE]
-- Downloaded: [PASTE ACTUAL DATE HERE]
-- File size: 493.5 MB
-- SHA-256: b3b5a3a95340179a716a05611d51ad4906484d38363d1ac36494a404c04e4370 (verified match)
-- Confirmed shape after load: 2,236,612 rows, 30 columns, matches the reference totals in the assignment brief
 
 ## Columns used
 - Category 1: countryorigin_iso3
