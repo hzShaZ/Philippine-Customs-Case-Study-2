@@ -4,7 +4,7 @@ A Python pipeline that loads, filters, summarizes, and visualizes the 2015 Phili
 
 ## Project Structure
 ```
-group5-case2/
+Philippine-Customs-Case-Study-2/
 ├── config.py              
 ├── main.py                
 ├── README.md
