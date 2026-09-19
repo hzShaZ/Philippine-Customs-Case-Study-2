@@ -1,0 +1,4 @@
+step,operation,rule,rows_before,rows_after
+1,load_csv,"loaded raw file, no filtering yet",0,2236612
+2,filter,"measure >= min_dutiable_value, country not excluded",2236612,2236612
+3,summarize,"grouped, two-factor grouped, pivot generated",2236612,197

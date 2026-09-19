@@ -1,0 +1,8 @@
+check,expected,actual,tolerance,pass
+Reference Row Count,2236612.0,2236612.0,0.0,True
+Reference Sum Check,3587267375257.0,3587267375257.0,1.0,True
+Rows Partition Equality,2236612.0,2236612.0,0.0,True
+Grouped Row Count Match,2236612.0,2236612.0,0.0,True
+Grouped Sum Match,3587267375257.0,3587267375257.0,1.0,True
+Pivot Interior Sum Match,3587267375257.0,3587267375257.0,1.0,True
+NumPy vs Loop Benchmark,157778798990.0,157778798990.0,0.01,True
