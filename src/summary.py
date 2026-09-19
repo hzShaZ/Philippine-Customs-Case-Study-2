@@ -1,14 +1,14 @@
 from pathlib import Path
 import pandas as pd
 
-class datasummarizer:
-  def __init__(self, df: pd.Dataframe, cat1: str, cat2:str, measure: str):
-    self.df = df
-    self.cat1 = cat1
-    self.cat2 = cat2
-    self.measure = measure
+class DataSummarizer:
+    def __init__(self, df: pd.DataFrame, cat1: str, cat2: str, measure: str):
+        self.df = df
+        self.cat1 = cat1
+        self.cat2 = cat2
+        self.measure = measure
 
- def generate_single_grouped(self, output_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
+    def generate_single_grouped(self, output_dir: Path) -> tuple[pd.DataFrame, pd.DataFrame]:
         grouped = self.df.groupby(self.cat1, dropna=False)[self.measure].agg(
             row_count='size', valid_measure_count='count', sum='sum', mean='mean'
         ).reset_index()
@@ -32,6 +32,3 @@ class datasummarizer:
         )
         pivot.to_csv(output_dir / "pivot.csv")
         return pivot
-
-
-
