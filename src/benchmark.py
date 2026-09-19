@@ -41,3 +41,14 @@ def run_numpy_benchmark(
         vector_sum = float(np.sum(sample[mask]))
         t1 = time.perf_counter()
         vector_times.append(t1 - t0)
+        
+    # 3. Verify equal results within tolerance
+    is_match = bool(np.isclose(loop_sum, vector_sum, atol=1e-2))
+
+    return {
+        "loop_sum": float(loop_sum),
+        "vector_sum": float(vector_sum),
+        "loop_median_sec": float(np.median(loop_times)),
+        "vector_median_sec": float(np.median(vector_times)),
+        "match": is_match
+    }
