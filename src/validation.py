@@ -40,3 +40,23 @@ def build_and_check_validation(
 
     val_df = pd.DataFrame(checks)
     val_df.to_csv(output_dir / "validation.csv", index=False)
+    
+    # Exit program if any check fails
+    if not val_df["pass"].all():
+        print("\n[VALIDATION FAILED] Discrepancies found in validation.csv:")
+        print(val_df[~val_df["pass"]])
+        sys.exit(1)
+
+    print("\n[VALIDATION PASSED] All reconciliation checks passed successfully.")
+    return val_df
+
+
+def export_audit_log(audit_records: list[dict], output_dir: Path) -> None:
+    """Exports accumulated audit trail records to audit_log.csv.
+
+    Parameters:
+        audit_records: List of dictionaries representing audit steps.
+        output_dir: Target directory path for audit_log.csv export.
+    """
+    audit_df = pd.DataFrame(audit_records)
+    audit_df.to_csv(output_dir / "audit_log.csv", index=False)
